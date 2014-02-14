@@ -39,8 +39,8 @@
     from.css("opacity", 0);
     dest.css("opacity", 0);
 
-    from_clone.insertAfter(from).css("position", "absolute").offset(from_pos).css("z-index", "999")
-    dest_clone.insertAfter(dest).css("position", "absolute").offset(dest_pos).css("z-index", "999")
+    from_clone.insertAfter(from).css({position: "absolute", width: from.outerWidth(), height: from.outerHeight()}).offset(from_pos).css("z-index", "999")
+    dest_clone.insertAfter(dest).css({position: "absolute", width: dest.outerWidth(), height: dest.outerHeight()}).offset(dest_pos).css("z-index", "999")
 
     if(from_pos.top != dest_pos.top)
         route_from_vertical = total_route_vertical - from.height()
