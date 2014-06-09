@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jquery.swap.js"></script>
+    <style type="text/css">
+      div.parent {
+        height: 100px;
+        width: 100px;
+        border: 1px solid black;
+      }
+
+      div.child {
+        margin: 5px;
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="list_example">
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+      <li>Four</li>
+    </ul>
+    <a id="swap_list_1" href="javascript:void(0);">Swap One and Four</a>
+    <br />
+    <a id="swap_list_2" href="javascript:void(0);">Swap Two and Three</a>
+    <br />
+    <br />
+
+    <div class="parent">
+      <div class="child">
+        1
+      </div>
+    </div>
+    <a id="swap_div" href="javascript:void(0);">Swap</a>
+    <div class="parent">
+      <div class="child">
+        2
+      </div>
+    </div>
+    <script type="text/javascript">
+      $('#swap_list_1').click(function(){
+        $("ul#list_example li:first").swap($("ul#list_example li:last"))
+      })
+
+      $('#swap_list_2').click(function(){
+        $('ul#list_example li').swap(1, 2)
+      })
+
+      $('#swap_div').click(function(){
+        $('.child').swap(0, 1)
+      })
+    </script>
+  </body>
+</html>
